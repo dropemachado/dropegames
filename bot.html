@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Robô de conversação</title>
+</head>
+<body>
+    <h1>Bem-vindo ao nosso site</h1>
+
+    <div id="chat">
+        <div id="messages">
+            <p>Olá, eu sou um robô de conversação. Qual é o seu nome?</p>
+        </div>
+
+        <div id="input">
+            <label for="user-input">Digite sua resposta:</label>
+            <input type="text" id="user-input">
+            <button id="send-button">Enviar</button>
+        </div>
+    </div>
+
+    <script>
+        const messages = document.getElementById("messages");
+        const userInput = document.getElementById("user-input");
+        const sendButton = document.getElementById("send-button");
+
+        sendButton.addEventListener("click", () => {
+            const userMessage = userInput.value;
+            const botMessage = getResponse(userMessage);
+
+            messages.innerHTML += `
+                <p><strong>Você:</strong> ${userMessage}</p>
+                <p><strong>Robô:</strong> ${botMessage}</p>
+            `;
+
+            userInput.value = "";
+        });
+
+        function getResponse(message) {
+            if (message.toLowerCase().includes("nome")) {
+                return "Meu nome é Drop. E o seu?";
+            } else if (message.toLowerCase().includes("funciona")) {
+                return "Nosso site oferece diversos serviços. O que você gostaria de saber?";
+            } else {
+                return "Desculpe, eu não entendi o que você disse. Pode repetir, por favor?";
+            }
+        }
+    </script>
+</body>
+</html>

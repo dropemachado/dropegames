@@ -1,0 +1,121 @@
+/* HEADER */
+
+header {
+  background-color: #ffb600;
+  text-align: center;
+  padding: 50px 0;
+  background-image: none;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  color: #000000;
+  padding: 20px;
+  font-family: Arial, sans-serif; /* Adiciona a fonte Arial ou uma fonte sans-serif ao menu */
+}
+
+nav ul {
+  display: flex;
+  list-style:none; /* Remove os marcadores de lista */
+}
+
+nav li {
+  margin: 0 10px; /* Adiciona espaço entre os itens do menu */
+}
+
+nav a {
+  text-decoration: none;
+  color: #000000;
+  font-size: 16px;
+}
+
+nav #menu-icon {
+  display: none; /* Esconde o ícone do menu quando não está sendo usado */
+}
+
+@media (max-width: 768px) { /* Adiciona um estilo responsivo para dispositivos móveis */
+  nav ul {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    background-color: #ffffff;
+  }
+
+  nav li {
+    display: block;
+    margin: 10px 0;
+  }
+
+  nav #menu-icon {
+    display: block;
+    font-size: 30px;
+    margin-right: 10px;
+  }
+
+  nav.active ul {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    border: none;
+    z-index: 1;
+  }
+
+  nav.active li {
+    width: 100%;
+  }
+
+  nav.active li a {
+    margin: 0;
+    font-size: 20px;
+  }
+}
+
+/* CARDS */
+
+.card {
+  position: relative; /* Adiciona posição relativa para que a descrição da carta possa ser posicionada */
+  overflow: hidden; /* Adiciona overflow hidden para esconder a descrição de cartas fora da borda */
+}
+
+.card-description {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 10px;
+  margin: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+  font-size: 18px;
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.card a {
+  display: block;
+  margin-top: 10px;
+  background-color: #ffb600;
+  color: #ffffff;
+  text-align: center;
+  padding: 10px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: all 0.2s;
+}
+
+.card a:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
